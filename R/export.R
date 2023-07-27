@@ -591,27 +591,7 @@ as_raw_html <- function(
   html_table <- as.character(as.tags.gt_tbl(data))
 
   if (inline_css) {
-
-    font_vec <- unique(dt_options_get_value(data = data, option = "table_font_names"))
-    font_family_attr <- as_css_font_family_attr(font_vec = font_vec)
-
-    html_table <-
-      gsub(
-        pattern = "<style>html \\{.*?\\}",
-        replacement = "<style>",
-        x = html_table
-      )
-
-    html_table <-
-      gsub(
-        pattern = ".gt_table {\n",
-        replacement = paste0(".gt_table { \n  ", font_family_attr, "\n"),
-        x = html_table,
-        fixed = TRUE
-      )
-
-    # Create inline styles
-    html_table <- juicyjuice::css_inline(html = html_table)
+    stop("`inline_css=TRUE` is currently unsupported under webR.")
   }
 
   htmltools::HTML(html_table)

@@ -43,7 +43,6 @@ Imports:
     glue (>= 1.6.2),
     htmltools (>= 0.5.4),
     htmlwidgets (>= 1.6.1),
-    juicyjuice (>= 0.1.0),
     magrittr (>= 2.0.2),
     markdown (>= 1.5),
     reactable (>= 0.4.3),
